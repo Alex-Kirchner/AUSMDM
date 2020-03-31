@@ -19,7 +19,13 @@ namespace AUSMDM.Controllers
         // Event views
         public ActionResult Event()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("Event", EventClass.Events);
+            }
             return View(EventClass.Events);
+            
         }
 
         public ActionResult CreateEvent()
@@ -55,13 +61,19 @@ namespace AUSMDM.Controllers
 
         public ActionResult CollectPlan()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("CollectPlan", CollectPlanClass.CollectPlans);
+            }
             return View(CollectPlanClass.CollectPlans);
+            
         }
 
         public ActionResult CreateCollectPlan()
         {
             return View();
-               
+
         }
 
         [HttpPost]
@@ -85,14 +97,21 @@ namespace AUSMDM.Controllers
             CollectPlanClass.CollectPlans.Remove(st);
             return RedirectToAction("CollectPlan");
         }
-        
+
         // Collect Plan ends
 
 
         // SupplyGroup Views
         public ActionResult SupplyGroup()
+
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("SupplyGroup", SupplyGroupClass.SupplyGroups);
+            }
             return View(SupplyGroupClass.SupplyGroups);
+            
         }
 
         public ActionResult CreateSupplyGroup()
@@ -129,7 +148,13 @@ namespace AUSMDM.Controllers
         // Tariff Views
         public ActionResult Tariff()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("Tariff", TariffClass.tariffs);
+            }
             return View(TariffClass.tariffs);
+            
         }
 
         public ActionResult CreateTariff()
@@ -179,7 +204,7 @@ namespace AUSMDM.Controllers
             return RedirectToAction("Fee");
 
         }
-       
+
 
         public ActionResult CreateFee()
         {
@@ -188,7 +213,13 @@ namespace AUSMDM.Controllers
 
         public ActionResult Fee()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("Fee", FeeModel.FeeList);
+            }
             return View(FeeModel.FeeList);
+            
         }
 
         public ActionResult DeleteFee(int i)
@@ -198,26 +229,33 @@ namespace AUSMDM.Controllers
             return RedirectToAction("Fee");
         }
         // Fee Views End
-         
+
 
 
         // Meter list views
         public ActionResult MeterList()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("MeterList", Meter.AllMeters);
+            }
             return View(Meter.AllMeters);
+
+            
         }
 
         public ActionResult CreateMeter()
         {
-            return View();
+            return View(); 
         }
 
 
         [HttpPost]
         public ActionResult CreateMeter(IFormCollection collection)
 
-        { 
-           
+        {
+
             Meter meterlist = new Meter();
             meterlist.IdentityNumber = Convert.ToInt32(collection["IdentityNumber"]);
             meterlist.Name = collection["Name"];
@@ -230,7 +268,7 @@ namespace AUSMDM.Controllers
             meterlist.Voltage = Convert.ToInt32(collection["Voltage"]);
 
             Meter.AllMeters.Add(meterlist);
-           return RedirectToAction("MeterList");
+            return RedirectToAction("MeterList");
         }
 
         public ActionResult DeleteMeter(int i)
@@ -239,7 +277,7 @@ namespace AUSMDM.Controllers
             Meter.AllMeters.Remove(st);
             return RedirectToAction("MeterList");
 
-            
+
 
 
 
@@ -247,7 +285,7 @@ namespace AUSMDM.Controllers
 
         public ActionResult EditMeter(string i)
         {
-           
+
             var std = Users.AllUsers.Where(s => s.IdentityNumber == i).FirstOrDefault();
             var st = Users.AllUsers.Find(c => c.IdentityNumber == i);
             Users.AllUsers.Remove(st);
@@ -260,7 +298,7 @@ namespace AUSMDM.Controllers
 
         // Supplier Views and functions
 
-            public ActionResult DetailsSupplier(string i)
+        public ActionResult DetailsSupplier(string i)
         {
             var std = Users.AllUsers.Find(s => s.IdentityNumber == i);
             return View(std);
@@ -273,24 +311,24 @@ namespace AUSMDM.Controllers
             Users.AllUsers.Remove(st);
             return RedirectToAction("Supplier");
 
-          
-           
-            
+
+
+
 
         }
 
-      
+
 
         public ActionResult EditSupplier(string i)
         {
-          
+
             var std = Users.AllUsers.Where(s => s.IdentityNumber == i).FirstOrDefault();
             var st = Users.AllUsers.Find(c => c.IdentityNumber == i);
             Users.AllUsers.Remove(st);
 
             return View(std);
 
-            
+
         }
 
 
@@ -301,36 +339,43 @@ namespace AUSMDM.Controllers
             var name = user.Name;
             var id = user.IdentityNumber;
             var surname = user.Surname;
-         
+
             Users Newuser = new Users();
             Newuser.Name = name;
             Newuser.Surname = surname;
             Newuser.IdentityNumber = id;
-            
+
             Users.AllUsers.Add(Newuser);
 
-             
+
 
             return RedirectToAction("Supplier");
         }
 
-       
+
 
         public ActionResult CreateSupplier(int id)
         {
             return View();
         }
 
-
-        public IActionResult Supplier()
+      
+        public ActionResult Supplier()
         {
-        
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("Supplier",Users.AllUsers);
+            }
             return View(Users.AllUsers);
         }
 
-     [HttpPost]
+            
+        
+
+        [HttpPost]
         public ActionResult CreateSupplier(IFormCollection collection)
-           
+
         {
             Users newUser = new Users(); // new class
             newUser.Name = collection["Name"];
@@ -344,7 +389,7 @@ namespace AUSMDM.Controllers
         }
 
         // End of Supplier Views
-              
+
 
 
     }

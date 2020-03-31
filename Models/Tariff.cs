@@ -8,7 +8,7 @@ namespace AUSMDM.Models
     public class TariffClass
     {
         public int IdentityNumber { get; set; }
-      public string Name { get; set; }
+        public string Name { get; set; }
         public string Status { get; set; }
         public int TI { get; set; }
         public string CreatedBy { get; set; }

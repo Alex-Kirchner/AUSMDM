@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,15 +14,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\AnalysisSection\" />
     <Folder Include="Views\ArchiveSection\" />
+    <Folder Include="Views\SystemSection\" />
     <Folder Include="Views\RemotingSection\" />
     <Folder Include="Views\SystemSection\" />
-    <Folder Include="Views\ReportSection\" />
     <Folder Include="Views\PrepaySection\" />
   </ItemGroup>
 

@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "MonthlyConsumptionFail";
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="~/css/ReportTopBar.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+
+
+<div class="navbar">
+
+    <button class="dropdown-btn">
+        Collection Report
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_OnlineAnalysis">Online Analysis <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_MonthlyConsumption">Monthly Consumption <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_MonthlyConsumptionFail">Monthly Consumption Fail <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+    </div>
+</div>
+
+<h1>Monthly Consumption Fail</h1>
+
+<div
+<body>
+    <p>
+        <form action="/action_page.php">
+            <center><label for="Start Date">Start Date:</label></center>
+            <center><input type="date" id="Start Date" name="Start Date"></center>
+        </form>
+    </p>
+
+</body>
+</div>
+
+<div>
+    <body>
+        <p>
+            <form action="/action_page.php">
+                <center><label for="End Date">End Date:</label></center>
+                <center><input type="date" id="End Date" name="End Date"></center>
+            </form>
+        </p>
+    </body>
+</div>
+
+<div>
+    <body>
+        <p>
+            <center><label for="Tariff">Choose option:</label></center>
+            <center><select id="Tariff"></center>
+            <option value="Total Tariff">Total Tariff</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            </select>
+        </p>
+    </body>
+</div>
+
+<div>
+    <p><center><button>Genereate PDF Report</button></center></p>
+
+    <p><center><button>Generate XLS Report</button></center></p>
+</div>
+</html>

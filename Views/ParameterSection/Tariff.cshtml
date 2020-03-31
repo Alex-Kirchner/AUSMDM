@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<AUSMDM.Models.TariffClass>
 
 
-    <center><h1><b>Tariff</b></h1></center>
-    <p>
-        <a asp-action="CreateTariff"><input type="button" value="Create New" class="btn btn-primary" /></a>
-    </p>
+<center><h1><b>Tariff</b></h1></center>
+<p>
+    <a asp-action="CreateTariff"><input type="button" value="Create New" class="btn btn-primary" /></a>
+</p>
 
 <table class="table">
     <thead>
@@ -35,33 +35,34 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TI)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "DeleteTariff", new {  i=item.IdentityNumber })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedOn)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteTariff", new { i = item.IdentityNumber })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

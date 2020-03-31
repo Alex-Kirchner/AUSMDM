@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="~/css/ReportTopBar.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+
+<div class="navbar">
+
+    <button class="dropdown-btn">
+        Archive Report
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <div> <a asp-area="" asp-controller="ReportSection" asp-action="_MeterStatus">Meter Status <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div> <a asp-area="" asp-controller="ReportSection" asp-action="_MaintenanceReport">Maintenance Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div> <a asp-area="" asp-controller="ReportSection" asp-action="_InstallationReport">Installation Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div> <a asp-area="" asp-controller="ReportSection" asp-action="_ReplacementReport">Replacement Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+
+
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+</html>

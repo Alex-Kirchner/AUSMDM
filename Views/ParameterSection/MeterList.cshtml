@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<AUSMDM.Models.Meter>
-
+@{ 
+    
+}
 
 
 <h1><center><b>Meter-Type</b></center></h1>
@@ -60,7 +62,7 @@
             <th class="Action">
                 Action
             </th>
-            
+
         </tr>
     </thead>
     <tbody>
@@ -95,8 +97,8 @@
                     @Html.DisplayFor(modelItem => item.CreditType)
                 </td>
                 <td class="Action">
-                    <button> @Html.ActionLink("Edit", "EditMeter", new {  i=item.IdentityNumber})</button> 
-                    <button>       @Html.ActionLink("Details", "DetailsMeter", new {  i=item.IdentityNumber  }) </button>
+                    <button> @Html.ActionLink("Edit", "EditMeter", new { i = item.IdentityNumber })</button>
+                    <button>       @Html.ActionLink("Details", "DetailsMeter", new { i = item.IdentityNumber }) </button>
                     <button>   @Html.ActionLink("Delete", "DeleteMeter", new { i = item.IdentityNumber })</button>
                 </td>
             </tr>

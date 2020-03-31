@@ -23,9 +23,9 @@ namespace AUSMDM.Models
 
         public int CurrentGrade { get; set; }
 
-        public string CreditType{ get; set; }
+        public string CreditType { get; set; }
 
-       
+
 
         public static List<Meter> AllMeters = new List<Meter>
         {

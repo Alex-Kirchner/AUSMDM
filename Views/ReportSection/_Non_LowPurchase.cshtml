@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Non/LowPurchase";
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="~/css/ReportTopBar.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+
+
+<div class="navbar">
+
+    <button class="dropdown-btn">
+        Pre Pay Report
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_Non_LowPurchase">None/Low Purchase <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_SalesReport">Sales Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_Purchase Report">Purchase Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div><a asp-area="" asp-controller="ReportSection" asp-action="_ReversalReport">Reversal Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+        <div><<a asp-area="" asp-controller="ReportSection" asp-action="_TariffReport">Tariff Report <i class="fa fa-file-text" aria-hidden="true"></i> </a></div>
+    </div>
+
+
+</div>
+
+<h1>Non/Low Purchase</h1>
+<div>
+    <body>
+        <p>
+            <form action="/action_page.php">
+                <center><label for="Start Date">Start Date:</label></center>
+                <center><input type="date" id="Start Date" name="Start Date"></center>
+            </form>
+        </p>
+
+    </body>
+</div>
+<div>
+    <body>
+        <p>
+            <form action="/action_page.php">
+                <center><label for="End Date">End Date:</label></center>
+                <center><input type="date" id="End Date" name="End Date"></center>
+            </form>
+        </p>
+    </body>
+</div>
+<div>
+    <body>
+        <p>
+            <center><label for="Type">Choose option:</label></center>
+            <center><select id="Type"></center>
+            <option value="Type">Type</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            </select>
+        </p>
+    </body>
+</div>
+<div>
+    <body>
+        <p>
+            <center><label>Purchase Money</label></center>
+            <center><input type="text" id="Purchase Money" name="Purchase Money" value=""><br></center>
+        </p>
+    </body>
+</div>
+
+<div>
+    <body>
+        <p>
+            <center><label for="Energy Type">Choose option:</label></center>
+            <center><select id="Energy Type"></center>
+            <option value="Energy Type">Energy Type</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            </select>
+        </p>
+    </body>
+</div>
+
+<div>
+    <p><center><button>Genereate PDF Report</button></center></p>
+
+    <p><center><button>Generate XLS Report</button></center></p>
+</div>
+</html>

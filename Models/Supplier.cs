@@ -10,15 +10,15 @@ namespace AUSMDM.Models
     public class Users
     {
         public string Name { get; set; }
-        
-           
+
+
         public string Surname { get; set; }
 
         [Key]
         public string IdentityNumber { get; set; }
 
 
-   
+
 
         public static List<Users> AllUsers = new List<Users>
         {
@@ -26,11 +26,11 @@ namespace AUSMDM.Models
             new Users {Name="Devon",Surname="rungasamt",IdentityNumber="1"}
 
 
-           
 
-            
+
+
         };
-   
+
 
 
 

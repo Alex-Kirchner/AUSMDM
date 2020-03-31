@@ -1,12 +1,10 @@
 ﻿@model IEnumerable<AUSMDM.Models.Users>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
 
 
 <h1><center><b>Supplier</b></center></h1>
 
 <p>
-    <a asp-action="CreateSupplier"><input type="button" value="Create New" class="btn btn-primary" /></a>
+    <a asp-action="CreateSupplier"><input type="button" value="Create New" class="btn btn-primary" id="Create" /></a>
 </p>
 
 <form asp-controller="ParameterController" asp-action="Search" method="get">

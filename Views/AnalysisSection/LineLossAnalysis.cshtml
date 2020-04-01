@@ -1,0 +1,121 @@
+﻿@model IEnumerable<AUSMDM.Models.LineLossClass>
+<h1>Line Loss</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" />
+<link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css.map" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
+
+<div>
+    <body>
+        <p>
+
+            <form action="/action_page.php">
+                <select id="selector">
+                    <!-- Use "select" to create object -->
+                    <option value="" disabled selected>Month</option> <!-- Add all applicable options -->
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sept</option>
+                    <option>Oct</option>
+                    <option>Nov</option>
+                    <option>Dec</option>
+                </select>
+                <label for="Start Date">From:</label>
+                <input type="date" id="ToDate" name="Start Date">
+                <label for="End Date">To:</label>
+                <input type="date" id="FromDate" name="End Date">
+                <form asp-controller="AnalysisController" asp-action="Search" method="get">
+                    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+                    <input name="Search" id="Search" placeholder="Name" />
+                    <input type="submit" value="Search" />
+                    <a asp-action="Search"></a>
+                </form>
+
+
+            </form>
+            
+        </p>
+
+    </body>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GatewayMeter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KWHGatewayMeter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KWHSUMCUSMET)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LineLossRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumOfMeters)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumbMeterDataCollected)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GatewayMeter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KWHGatewayMeter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KWHSUMCUSMET)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LineLossRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumOfMeters)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumbMeterDataCollected)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/js/losslineANalysis.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>

@@ -19,6 +19,11 @@ namespace AUSMDM.Controllers
         }
         public IActionResult _RealtimeOperating()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView();
+            }
             return View();
         }
 

@@ -20,8 +20,13 @@ namespace AUSMDM.Controllers
 
         public IActionResult CollectionReport()
         {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("CollectionReport");
+            }
             return View();
-            
+
         }
         public IActionResult ArchiveReport()
         {

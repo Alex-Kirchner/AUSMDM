@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\AnalysisSection\" />
     <Folder Include="Views\ArchiveSection\" />
     <Folder Include="Views\SystemSection\" />
     <Folder Include="Views\RemotingSection\" />

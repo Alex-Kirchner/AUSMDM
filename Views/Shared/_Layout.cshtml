@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.8.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/css/_layout.css">
+    <link rel="stylesheet" href="~/css/Layout.css">
 
 </head>
 <body>
@@ -58,12 +58,12 @@
                         <a href="#">Raw Data <i class="fa fa-microchip" aria-hidden="true"></i> </a>
                         <a href="#">Monthly Billing <i class="fa fa-book" aria-hidden="true"></i> </a>
                         <a href="#">Load Profile <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
-                        <a href="#">Consumption <i class="fa fa-address-card-o" aria-hidden="true"></i> </a>
-                        <a href="#">Max Demand <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
-                        <a href="#">Online Rate <i class="fa fa-arrows-v" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("Consumption","AnalysisSection")">Consumption <i class="fa fa-address-card-o" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("MaxDemand","AnalysisSection")">Max Demand <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("OnlineRate","AnalysisSection")">Online Rate <i class="fa fa-arrows-v" aria-hidden="true"></i> </a>
                         <a href="#">Summary <i class="fa fa-file-text" aria-hidden="true"></i> </a>
-                        <a href="#">Task Analysis <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
-                        <a href="#">Line Loss <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("TaskAnalysis","AnalysisSection")">Task Analysis <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("LineLossAnalysis","AnalysisSection")">Line Loss <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> </a>
                     </div>
                 </li>
                 <li>

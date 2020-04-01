@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AUSMDM.Models.MaxDemandClass>
+<h1>Max Demand</h1>
+    <form action="/action_page.php">
+        <label for="Start Date">From:</label>
+        <input type="date" id="ToMaxDemandDate" name="Start Date">
+        <label for="End Date">To:</label>
+        <input type="date" id="FromMaxDemandDate" name="End Date">
+        <form asp-controller="AnalysisController" asp-action="Search" method="get">
+            <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+            <input name="Search" id="Search" placeholder="MSNO" />
+            <input type="submit" value="Search" />
+            <a asp-action="Search"></a>
+        </form>
+    </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.No)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MSNO)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.POCSN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tariff)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CollectTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.KW_DEMAND_IMPORT)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.KW_DEMAND_IMPORT_TIME)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.No)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MSNO)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.POCSN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tariff)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CollectTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KW_DEMAND_IMPORT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KW_DEMAND_IMPORT_TIME)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>

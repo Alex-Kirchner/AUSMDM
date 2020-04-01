@@ -11687,7 +11687,6 @@ a[data-toggle="collapse"] {
 }
 
 .active {
-    background-color: orange;
     color: white;
 }
 
@@ -11744,6 +11743,51 @@ a[data-toggle="collapse"] {
     float: left;
     overflow: hidden;
 }
+
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    font-family: Arial;
+}
+
+    /* Links inside the navbar */
+    .navbar a {
+        float: right;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .navbar a:hover
+    {
+        background-color:green;
+    }
+
+.TopDropDown-container {
+    display: none;
+    background-color: black;
+}
+.TopDropDown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+    outline: none;
+}
+
+h1{
+    text-align:center;
+   
+}
+
 
 body {
 }

@@ -7,8 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.4.1" />
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.8.1" />
-    <PackageReference Include="Grid.Mvc" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />

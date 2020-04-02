@@ -2,19 +2,18 @@
 
 <h1>Task Analysis</h1>
 <form action="/action_page.php">
-   
+
     <label for="Start Date">From:</label>
     <input type="datetime-local" id="ToTaskDate" name="Start Date">
     <label for="End Date">To:</label>
     <input type="datetime-local" id="FromTaskDate" name="End Date">
-    <form asp-controller="AnalysisController" asp-action="Search" method="get">
-        <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
-        <input name="Search" id="Search" placeholder="MSNO/Task Type" />
-        <input type="submit" value="Search" />
-        <a asp-action="Search"></a>
-    </form>
 
-
+</form>
+<form asp-controller="AnalysisController" asp-action="Search" method="get">
+    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+    <input name="Search" id="Search" placeholder="MSNO/Task Type" />
+    <input type="submit" value="Search" />
+    <a asp-action="Search"></a>
 </form>
 <table class="table">
     <thead>
@@ -59,46 +58,47 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.No)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeviceNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeviceType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaskType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaskName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExecuteTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FinishTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ElapsedTimeMS)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Result)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Times)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndTime)
-            </td>
-            
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeviceType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaskType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaskName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExecuteTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ElapsedTimeMS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Result)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Times)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>

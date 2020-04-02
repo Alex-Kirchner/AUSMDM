@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<AUSMDM.Models.ConsumptionClass>
 
 <h1>Consumption</h1>
-<form action="/action_page.php">
+<form [formgroup action="/action_page.php">
     <label for="Start Date">From:</label>
     <input type="date" id="ToMaxDemandDate" name="Start Date">
     <label for="End Date">To:</label>
@@ -13,10 +13,10 @@
         <option>Tues</option>
         <option>Wed</option>
         <option>Thurs</option>
-        <option>Fri</option> 
+        <option>Fri</option>
         <option>Sat</option>
         <option>Sun</option>
-        
+
     </select>
     <select id="selector">
         <!-- Use "select" to create object -->
@@ -30,14 +30,15 @@
         <option>Tariff 6</option>
         <option>Tariff 7</option>
         <option>Tariff 8</option>
-        
+
     </select>
-    asp-controller="AnalysisController" asp-action="Search" method="get">
-        <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
-        <input name="Search" id="Search" placeholder="MSNO" />
-        <input type="submit" value="Search" />
-        <a asp-action="Search"></a>
-    
+</form>
+<form asp-controller="AnalysisController" asp-action="Search" method="get">
+    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+    <input name="Search" id="Search" placeholder="MSNO" />
+    <input type="submit" value="Search" />
+    <a asp-action="Search"></a>
+
 </form>
 <table class="table">
     <thead>

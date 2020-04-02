@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<AUSMDM.Models.OnlineRateClass>
 <h1>Online Rate</h1>
     <div>
-        <body>
-            <p>
+        
 
                 <form action="/action_page.php">
 
@@ -25,19 +24,17 @@
                         <option>Rate <= 100</option>
 
                     </select>
-                    <form asp-controller="AnalysisController" asp-action="Search" method="get">
-                        <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
-                        <input name="Search" id="Search" placeholder="Name" />
-                        <input type="submit" value="Search" />
-                        <a asp-action="Search"></a>
-                    </form>
 
 
                 </form>
+                <form asp-controller="AnalysisController" asp-action="Search" method="get">
+                    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+                    <input name="Search" id="Search" placeholder="Name" />
+                    <input type="submit" value="Search" />
+                    <a asp-action="Search"></a>
+                </form>
 
-            </p>
-
-        </body>
+       
     </div>
 <table class="table">
     <thead>

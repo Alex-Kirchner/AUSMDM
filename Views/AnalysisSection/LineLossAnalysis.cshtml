@@ -8,8 +8,8 @@
 
 
 <div>
-    <body>
-        <p>
+    
+        
 
             <form action="/action_page.php">
                 <select id="selector">
@@ -32,19 +32,16 @@
                 <input type="date" id="ToDate" name="Start Date">
                 <label for="End Date">To:</label>
                 <input type="date" id="FromDate" name="End Date">
-                <form asp-controller="AnalysisController" asp-action="Search" method="get">
-                    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
-                    <input name="Search" id="Search" placeholder="Name" />
-                    <input type="submit" value="Search" />
-                    <a asp-action="Search"></a>
-                </form>
-
 
             </form>
-            
-        </p>
-
-    </body>
+        
+        <form asp-controller="AnalysisController" asp-action="Search" method="get">
+            <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+            <input name="Search" id="Search" placeholder="Name" />
+            <input type="submit" value="Search" />
+            <a asp-action="Search"></a>
+        </form>
+    
 </div>
 
 

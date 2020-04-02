@@ -1,6 +1,35 @@
 ﻿@model IEnumerable<AUSMDM.Models.MonthlyBillingClass>
 
 <h1>Monthly Billing</h1>
+<form action="/action_page.php">
+
+    <label for="Start Date">From:</label>
+    <input type="datetime-local" id="ToTaskDate" name="Start Date">
+    <label for="End Date">To:</label>
+    <input type="datetime-local" id="FromTaskDate" name="End Date">
+    <select id="selector">
+        <!-- Use "select" to create object -->
+        <option value="" disabled selected>Total Tariff</option> <!-- Add all applicable options -->
+        <option>All Tariff</option>
+        <option>Tariff 1</option>
+        <option>Tariff 2</option>
+        <option>Tariff 3</option>
+        <option>Tariff 4</option>
+        <option>Tariff 5</option>
+        <option>Tariff 6</option>
+        <option>Tariff 7</option>
+        <option>Tariff 8</option>
+
+    </select>
+
+</form>
+
+<form asp-controller="AnalysisController" asp-action="Search" method="get">
+    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+    <input name="Search" id="Search" placeholder="MSNO" />
+    <input type="submit" value="Search" />
+    <a asp-action="Search"></a>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -29,31 +58,32 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.No)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MSNO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.POCSN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CollectTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tariff)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KWH_IMPORT)
-            </td>
-        
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MSNO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.POCSN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollectTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tariff)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KWH_IMPORT)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>

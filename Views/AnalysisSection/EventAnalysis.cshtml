@@ -1,6 +1,48 @@
 ﻿@model IEnumerable<AUSMDM.Models.EventAnalysisClass>
 
 <h1>Event Analysis</h1>
+<select id="selector">
+    <!-- Use "select" to create object -->
+    <option value="" disabled selected>Protocols</option> <!-- Add all applicable options -->
+    <option>All Protocol</option>
+    <option>DLMSProtocolKGZ</option>
+    <option>DLMSProtocol_SouthAfrica</option>
+ 
+</select>
+<select id="selector">
+    <!-- Use "select" to create object -->
+    <option value="" disabled selected>Class 1</option> <!-- Add all applicable options -->
+    <option>All Class 1</option>
+    <option>DLMS CT Meter Events</option>
+    
+
+</select>
+<select id="selector">
+    <!-- Use "select" to create object -->
+    <option value="" disabled selected>Class 2</option> <!-- Add all applicable options -->
+    <option>All Class 2</option>
+    <option>Standard events</option>
+    <option>Fraud events</option>
+    <option>Control Events</option>
+    <option>Power Quality Events</option>
+ 
+
+</select>
+<form action="/action_page.php">
+
+    <label for="Start Date">From:</label>
+    <input type="datetime-local" id="ToTaskDate" name="Start Date">
+    <label for="End Date">To:</label>
+    <input type="datetime-local" id="FromTaskDate" name="End Date">
+
+</form>
+<form asp-controller="AnalysisController" asp-action="Search" method="get">
+    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+    <input name="Search" id="Search" placeholder="MSNO" />
+    <input type="submit" value="Search" />
+    <a asp-action="Search"></a>
+
+</form>
 <table class="table">
     <thead>
         <tr>

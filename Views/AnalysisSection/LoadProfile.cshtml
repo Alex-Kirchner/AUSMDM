@@ -1,6 +1,21 @@
 ﻿@model IEnumerable<AUSMDM.Models.LoadProfileClass>
 
 <h1>Load Profile</h1>
+<form action="/action_page.php">
+
+    <label for="Start Date">From:</label>
+    <input type="datetime-local" id="ToTaskDate" name="Start Date">
+    <label for="End Date">To:</label>
+    <input type="datetime-local" id="FromTaskDate" name="End Date">
+
+</form>
+
+<form asp-controller="AnalysisController" asp-action="Search" method="get">
+    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+    <input name="Search" id="Search" placeholder="MSNO" />
+    <input type="submit" value="Search" />
+    <a asp-action="Search"></a>
+</form>
 <table class="table">
     <thead>
         <tr>

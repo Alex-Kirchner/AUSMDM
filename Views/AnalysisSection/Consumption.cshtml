@@ -1,45 +1,45 @@
 ﻿@model IEnumerable<AUSMDM.Models.ConsumptionClass>
 
 <h1>Consumption</h1>
-<form [formgroup action="/action_page.php">
-    <label for="Start Date">From:</label>
-    <input type="date" id="ToMaxDemandDate" name="Start Date">
-    <label for="End Date">To:</label>
-    <input type="date" id="FromMaxDemandDate" name="End Date">
-    <select id="selector">
-        <!-- Use "select" to create object -->
-        <option value="" disabled selected>Day</option> <!-- Add all applicable options -->
-        <option>Mon</option>
-        <option>Tues</option>
-        <option>Wed</option>
-        <option>Thurs</option>
-        <option>Fri</option>
-        <option>Sat</option>
-        <option>Sun</option>
+    <form action="/action_page.php">
+        <label for="Start Date">From:</label>
+        <input type="date" id="ToMaxDemandDate" name="Start Date">
+        <label for="End Date">To:</label>
+        <input type="date" id="FromMaxDemandDate" name="End Date">
+        <select id="selector">
+            <!-- Use "select" to create object -->
+            <option value="" disabled selected>Day</option> <!-- Add all applicable options -->
+            <option>Mon</option>
+            <option>Tues</option>
+            <option>Wed</option>
+            <option>Thurs</option>
+            <option>Fri</option>
+            <option>Sat</option>
+            <option>Sun</option>
 
-    </select>
-    <select id="selector">
-        <!-- Use "select" to create object -->
-        <option value="" disabled selected>Total Tariff</option> <!-- Add all applicable options -->
-        <option>All Tariff</option>
-        <option>Tariff 1</option>
-        <option>Tariff 2</option>
-        <option>Tariff 3</option>
-        <option>Tariff 4</option>
-        <option>Tariff 5</option>
-        <option>Tariff 6</option>
-        <option>Tariff 7</option>
-        <option>Tariff 8</option>
+        </select>
+        <select id="selector">
+            <!-- Use "select" to create object -->
+            <option value="" disabled selected>Total Tariff</option> <!-- Add all applicable options -->
+            <option>All Tariff</option>
+            <option>Tariff 1</option>
+            <option>Tariff 2</option>
+            <option>Tariff 3</option>
+            <option>Tariff 4</option>
+            <option>Tariff 5</option>
+            <option>Tariff 6</option>
+            <option>Tariff 7</option>
+            <option>Tariff 8</option>
 
-    </select>
-</form>
-<form asp-controller="AnalysisController" asp-action="Search" method="get">
-    <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
-    <input name="Search" id="Search" placeholder="MSNO" />
-    <input type="submit" value="Search" />
-    <a asp-action="Search"></a>
+        </select>
+    </form>
+    <form asp-controller="AnalysisController" asp-action="Search" method="get">
+        <!--https://forums.asp.net/t/2093808.aspx?+ASP+NET+5+MVC+6+How+to+make+a+search+box+and+receive+input+value+in+Search+Action+-->
+        <input name="Search" id="Search" placeholder="MSNO" />
+        <input type="submit" value="Search" />
+        <a asp-action="Search"></a>
 
-</form>
+    </form>
 <table class="table">
     <thead>
         <tr>

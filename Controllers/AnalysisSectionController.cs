@@ -10,6 +10,43 @@ namespace AUSMDM.Controllers
 {
     public class AnalysisSectionController : Controller
     {
+        public ActionResult RawData()
+        {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("RawData", RawDataClass.RawData);
+            }
+            return View(RawDataClass.RawData);
+        }
+        public ActionResult MonthlyBilling()
+        {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("MonthlyBilling", MonthlyBillingClass.monthlyBillings);
+            }
+            return View(MonthlyBillingClass.monthlyBillings);
+        }
+        public ActionResult LoadProfile()
+        {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("LoadProfile", LoadProfileClass.loadProfiles);
+            }
+            return View(LoadProfileClass.loadProfiles);
+        }
+        public ActionResult EventAnalysis()
+        {
+            bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+            if (isAjax)
+            {
+                return PartialView("EventAnalysis", EventAnalysisClass.eventAnalyses);
+            }
+            return View(EventAnalysisClass.eventAnalyses);
+        }
+
         public ActionResult Consumption()
         {
             bool isAjax = HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest";

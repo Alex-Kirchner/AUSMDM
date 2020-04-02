@@ -29,7 +29,7 @@
                 </button>
             </div>
             <!--  <img class="active" src="~/img/aus.jpg" alt="AUS" width="200"
-            height="80">-->
+    height="80">-->
             <div> <h1 class="logo">AUS</h1></div>
             <ul class="list-unstyled components mb-5">
                 <li>
@@ -54,10 +54,10 @@
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-container" id="dropdown-container3">
-                        <a href="#">Event Analysis <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> </a>
-                        <a href="#">Raw Data <i class="fa fa-microchip" aria-hidden="true"></i> </a>
-                        <a href="#">Monthly Billing <i class="fa fa-book" aria-hidden="true"></i> </a>
-                        <a href="#">Load Profile <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("EventAnalysis","AnalysisSection")">Event Analysis <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("RawData","AnalysisSection")">Raw Data <i class="fa fa-microchip" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("MonthlyBilling","AnalysisSection")">Monthly Billing <i class="fa fa-book" aria-hidden="true"></i> </a>
+                        <a href="@Url.Action("LoadProfile","AnalysisSection")">Load Profile <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
                         <a href="@Url.Action("Consumption","AnalysisSection")">Consumption <i class="fa fa-address-card-o" aria-hidden="true"></i> </a>
                         <a href="@Url.Action("MaxDemand","AnalysisSection")">Max Demand <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
                         <a href="@Url.Action("OnlineRate","AnalysisSection")">Online Rate <i class="fa fa-arrows-v" aria-hidden="true"></i> </a>
@@ -150,14 +150,14 @@
                         <a href="#">Subscribe <i class="fa fa-rss" aria-hidden="true"></i> </a>
                     </div>
                 </li>
-                <footer class="border-top footer text-muted">
-                    <div class="container">
-                        &copy; 2020 - AUSMDM - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </div>
-                   
-                </footer>
-            </ul>
 
+            </ul>
+            <footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2020 - AUSMDM - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+
+            </footer>
 
         </div>
 
@@ -166,6 +166,7 @@
         <div id="content" class="p-4 p-md-5">
             @RenderBody();
             
+        </div>
         </div>
   
 
